@@ -3,12 +3,13 @@ import Home from "./pages/Home"
 import Cart from "./pages/Cart"
 import { useState } from "react"
 
+//STATE CONTROLLER + ROUTER CONTROLLER
 function App() {
 
   const [cart, setCart] = useState([])
 
-  // ADD TO CART
-  const addToCart = (product) => {
+  
+  function addToCart(product) {
 
     const exist = cart.find(item => item.id === product.id)
 
@@ -25,12 +26,12 @@ function App() {
     }
   }
 
-  // REMOVE
-  const removeFromCart = (id) => {
+  
+ function removeFromCart(id){
     setCart(cart.filter(item => item.id !== id))
   }
-
-  // QUANTITY +
+ 
+ 
   const increaseQty = (id) => {
     setCart(
       cart.map(item =>
@@ -41,7 +42,7 @@ function App() {
     )
   }
 
-  // QUANTITY -
+
   const decreaseQty = (id) => {
     setCart(
       cart.map(item =>
