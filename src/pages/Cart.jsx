@@ -14,14 +14,14 @@ function Cart({
 
   if (cart.length === 0) {
     return (
-      <div className="p-10">
+      <div className=" text-center p-10">
 
-        <h1 className="text-2xl">
+        <h1 className="text-4xl">
           Your cart is empty
         </h1>
 
-        <Link to="/" className="text-blue-500">
-          Go Shopping
+        <Link to="/" className="text-red-600">
+          Go back to home
         </Link>
 
       </div>
@@ -31,15 +31,13 @@ function Cart({
   return (
     <div className="p-10">
 
-      <Link to="/" className="bg-black text-white px-4 py-2">
-        Back Home
+      <Link to="/" className="bg-blue-500  text-center flex  text-white px-2 py-2 rounded-xl">
+       - Back Home
       </Link>
 
       {cart.map(item => (
 
-        <div
-          key={item.id}
-          className="flex items-center gap-6 border p-4 mt-4"
+        <div key={item.id} className="flex items-center gap-6  p-4 mt-4"
         >
 
           <img src={item.image} className="w-20" />
@@ -49,7 +47,6 @@ function Cart({
             <p>${item.price}</p>
           </div>
 
-          {/* Quantity */}
           <div className="flex gap-2">
 
             <button
@@ -77,8 +74,8 @@ function Cart({
 
       ))}
 
-      {/* TOTAL */}
-      <h1 className="text-2xl mt-6">
+      
+      <h1 className="text-2xl font-bold mt-6">
         Total: ${total}
       </h1>
 
